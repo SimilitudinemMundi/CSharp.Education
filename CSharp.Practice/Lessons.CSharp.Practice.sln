@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task7.Lesson1", "Lesson1.Ta
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson2", "Lesson2", "{34B76EE9-7D04-4D42-A8E4-DFCBD43506EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson2.Task1", "Lesson2.Task1\Lesson2.Task1.csproj", "{040F0A66-0C9C-4A91-B3CE-5369E3334B59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson2.Task.TicTacToe", "Lesson2.Task1\Lesson2.Task.TicTacToe.csproj", "{040F0A66-0C9C-4A91-B3CE-5369E3334B59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
