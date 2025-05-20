@@ -56,24 +56,26 @@ class TicTacToe
 
     static void Draw(string[] cells)
     {
-        Console.WriteLine("-------------");
+        const string line = "-------------";
+        Console.WriteLine(line);
         Console.WriteLine($"| {cells[0]} | {cells[1]} | {cells[2]} |");
-        Console.WriteLine("-------------");
+        Console.WriteLine(line);
         Console.WriteLine($"| {cells[3]} | {cells[4]} | {cells[5]} |");
-        Console.WriteLine("-------------");
+        Console.WriteLine(line);
         Console.WriteLine($"| {cells[6]} | {cells[7]} | {cells[8]} |");
-        Console.WriteLine("-------------");
+        Console.WriteLine(line);
     }
 
     static void Game()
     {
-        string[] players = { "Игрок 1", "Игрок 2" };
+        const string plr1 = "Игрок 1", plr2 = "Игрок 2";
+        string[] players = {plr1, plr2};
         int currentPlayerIndex = 1;
         string[] cells = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
         int[] memory = [];
         Console.WriteLine("Добро пожаловать в игру Крестики-Нолики!");
 
-        while (IsWinCombination(cells) == false)
+        while (IsWinCombination(cells) == false && memory.Length < 9)
         {
             currentPlayerIndex = (currentPlayerIndex + 1) % players.Length;
             Draw(cells);
@@ -81,7 +83,7 @@ class TicTacToe
             Console.WriteLine($"Ход {currentPlayer}");
             switch (currentPlayer)
             {
-                case "Игрок 1":
+                case plr1:
                     {
                         while (true)
                         {
@@ -102,7 +104,7 @@ class TicTacToe
                         break;
                     }
 
-                case "Игрок 2":
+                case plr2:
                     {
                         while (true)
                         {
@@ -125,8 +127,12 @@ class TicTacToe
             }
             Console.WriteLine();
         }
-        Console.WriteLine($"Победил {players[currentPlayerIndex]}. Поздравляем!");
-        Draw(cells);
+        if (memory.Length == 9 && IsWinCombination(cells) == false)
+        {
+            Console.WriteLine("Ничья!");
+            Draw(cells);
+        }
+        else Console.WriteLine($"Победил {players[currentPlayerIndex]}. Поздравляем!");
     }
 
 }
